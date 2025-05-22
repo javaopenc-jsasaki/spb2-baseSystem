@@ -1,0 +1,14 @@
+<h1><span th:text="${title}"></span></h1>
+ <div th:object="${form}">
+ <p>入力内容ここから</p>
+ <p th:text="*{name1}"></p>
+ <p>入力内容ここまで</p>
+ <form method="get" action="#" th:action="@{/form}">
+ <input type="hidden" name="name1" th:value="*{name1}">
+ <input type="submit" value="入力画面へ">
+ </form>
+ <form method="get" action="#" th:action="@{/complete}">
+ <input type="hidden" name="name1" th:value="*{name1}">
+ <input type="submit" value="完了画面へ">
+ </form>
+ </div>

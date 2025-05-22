@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Hello</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" th:href="@{/style.css}">
+	</head>
+	<body>
+		<h1 th:text="${title}"></h1>
+		<!-- 機能拡張：検索ボックス ここから-->
+		<form method="get" action="#" th:action="@{/view}">
+			<input type="text" name="searchString" />
+			<input type="submit" value="検索" />
+		</form>
+		<!-- 機能拡張：検索ボックス ここまで-->
+		<br />
+		<table>
+			<tr>
+				<th>id</th>
+				<th>名前</th>
+				<th></th>
+				<th></th>
+			</tr>
+			<tr th:each="res : ${dbList}">
+				<td th:text="${res.id}">1</td>
+				<td th:text="${res.name}">名前</td>
+				<td>
+					<form th:action="@{/edit/{id}(id=${res.id})}">
+						<input type="submit" value="編集" />
+					</form>
+				</td>
+				<td>
+					<form th:action="@{/del/{id}(id=${res.id})}">
+						<input type="submit" value="削除" />
+					</form>
+				</td>
+			</tr>
+		</table>
+		<p><a href="/form" th:href="@{/form}">フォーム入力画面へ</a></p>
+	</body>
+</html>

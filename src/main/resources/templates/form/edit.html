@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<h1 th:text="${title}"></h1>
+		
+		<div th:object="${entform}">
+			<form action="#" method="get" th:action="@{/edit/__*{id}__/exe}">
+				<p>
+					番号:<span th:text="*{id}"></span>
+					<input type="hidden" name="id" th:value="*{id}">
+				</p>
+				<p>
+					名前: <input type="text" name="name1" th:value="*{name}">
+				</p>
+				<input type="submit" value="更新">
+			</form>
+		</div>
+	</body>
+</html>
