@@ -62,6 +62,7 @@ public class FormController {
 		// 検索機能：コメントアウトされているのが旧コード
 		//List<EntForm> list = sampledao.searchDb(form.getSearchString());
 		List<EntForm> list = sampledao.searchDb(form.getSearchString());
+		// 検索機能：新コードここまで
 
 		model.addAttribute("dbList", list);
 		model.addAttribute("title", "一覧ページ");

@@ -7,12 +7,12 @@
 	</head>
 	<body>
 		<h1 th:text="${title}"></h1>
-		<!-- 機能拡張：検索ボックス ここから-->
+		<!-- 検索機能：検索ボックス ここから-->
 		<form method="get" action="#" th:action="@{/view}">
 			<input type="text" name="searchString" />
 			<input type="submit" value="検索" />
 		</form>
-		<!-- 機能拡張：検索ボックス ここまで-->
+		<!-- 検索機能：検索ボックス ここまで-->
 		<br />
 		<table>
 			<tr>
